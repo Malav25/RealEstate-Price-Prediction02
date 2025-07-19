@@ -77,8 +77,8 @@ This project, "HouseWise," is a web application built with Django that leverages
           * ...
       * `static/`
           * `css/`
-              * [cite\_start]`styles.css` [cite: 1]
-              * [cite\_start]`price_predictor.css` [cite: 2]
+              * `styles.css` 
+              * `price_predictor.css`
               * `style.css`
           * `js/`
               * `scripts.js`
