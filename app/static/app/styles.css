@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between icon and text */
+}
+
+.navbar-logo svg {
+    height: 60px;
+    width: 50px;
+}
+.navbar-logo h1 {
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 1px;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: cursive;
+    font-weight: bolder;
+}
+
+/* Buttons container */
+.navbar-buttons {
+    display: flex;
+    gap: 15px;
+    font-family: cursive;
+}
+
+/* Common button styling */
+.navbar-buttons .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Specific button colors */
+.login-btn {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid transparent;
+}
+
+.signup-btn {
+    background-color: #f9a825;
+    color: #fff;
+    border: 2px solid transparent;
+}
+
+.getstarted-btn {
+    background-color: #2979ff;
+    color: #fff;
+    border: 2px solid transparent;
+}
+
+/* Hover effects */
+.login-btn:hover {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid black;
+}
+
+.signup-btn:hover {
+    background-color: #f9a825;
+    border: 2px solid black;
+}
+
+.getstarted-btn:hover {
+    background-color: #2979ff;
+    border: 2px solid black;
+}
+/* Fullscreen Video */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+}
+/* Typewriter Effect Styling */
+.typewriter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #3ddd92;
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: 700;
+    white-space:nowrap; /* Allows wrapping of text */
+    overflow: hidden;
+    /* max-width: 100%; Adjust as needed */
+    padding: 0 10px; /* Padding to ensure text doesn't touch the edges */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    animation: blink 0.75s step-end infinite;
+}
+
+/* Typewriter animation */
+@keyframes type {
+    from { width: 0; }
+    to { width: 100%; }
+}
+/* Responsive Font Sizes and Adjustments */
+@media (min-width: 1200px) {
+    .typewriter {
+        font-size: 35px; /* Larger font size for larger screens */
+        
+        max-width: fit-content;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .typewriter {
+        font-size: 28px; /* Medium font size for medium screens */
+        max-width: 75%; /* Adjust width for medium screens */
+        white-space: pre-wrap;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
+    .typewriter {
+        font-size: 22px; /* Smaller font size for smaller screens */
+        max-width: 85%; /* Adjust width for smaller screens */
+        white-space: pre-wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter {
+        font-size: 18px; /* Smallest font size for mobile screens */
+        max-width: 90%; /* Adjust width for mobile screens */
+        white-space: pre-wrap;
+    }
+}
+
+
+
+/* Make navbar responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navbar-buttons .btn {
+        flex-grow: 1;
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo h1 {
+        font-size: 20px;
+    }
+
+    .navbar-buttons .btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
