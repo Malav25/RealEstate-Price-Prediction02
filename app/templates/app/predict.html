@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/price_predictor.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>House Price Predictor</h2>
+        
+        <form  method="POST">
+            {% csrf_token %}
+            
+            <!-- Locality Dropdown -->
+            <label for="locality">Locality:</label>
+            <select name="locality" id="locality" required>
+              <option value="ambavadi">Select Locality</option>
+              <option value="ambavadi">ambavadi</option>
+              <option value="ambli">ambli</option>
+              <option value="bodakdev">bodakdev</option>
+              <option value="bopal">bopal</option>
+              <option value="chandkheda">chandkheda</option>
+              <option value="ghatlodiya">ghatlodiya</option>
+              <option value="ghuma">ghuma</option>
+              <option value="gota">gota</option>
+              <option value="gurukul">gurukul</option>
+              <option value="jagatpur">jagatpur</option>
+              <option value="jodhpur village">jodhpur village</option>
+              <option value="makarba">makarba</option>
+              <option value="maninagar">maninagar</option>
+              <option value="memnagar">memnagar</option>
+              <option value="motera">motera</option>
+              <option value="naroda">naroda</option>
+              <option value="navrangpura">navrangpura</option>
+              <option value="nikol">nikol</option>
+              <option value="paldi">paldi</option>
+              <option value="prahlad nagar">prahlad nagar</option>
+              <option value="ranip">ranip</option>
+              <option value="sanand">sanand</option>
+              <option value="sanathal">sanathal</option>
+              <option value="satellite">satellite</option>
+              <option value="sg highway">sg highway</option>
+              <option value="shela">shela</option>
+              <option value="shilaj">shilaj</option>
+              <option value="sola">sola</option>
+              <option value="south bopal">south bopal</option>
+              <option value="thaltej">thaltej</option>
+              <option value="tragad">tragad</option>
+              <option value="vasna">vasna</option>
+              <option value="vastral">vastral</option>
+              <option value="vastrapur">vastrapur</option>
+              <option value="vejalpur">vejalpur</option>
+                <!-- Add more options as needed -->
+            </select>
+            
+            <!-- BHK Dropdown -->
+            <label for="bhk">BHK:</label>
+            <select name="bhk" id="bhk" required>
+              <option value="1">Select BHK</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            
+            <!-- Area Dropdown -->
+            <label for="area">Area (in Sq Ft):</label>
+            <select name="area" id="area" required>
+              <option value="250">Select Area</option>
+              <option value="500">Less than 1000</option>
+              <option value="1500">1000 to 2500</option>
+              <option value="3500">2500 to 5000</option>
+              <option value="6000">5000 to 7500</option>
+              <option value="8500">7500 to 10500</option>
+            </select>
+            
+            <!-- Predict Button -->
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

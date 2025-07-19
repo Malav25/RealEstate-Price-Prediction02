@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - House Price Predictor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+<body class="result-body">
+    <div class="result-container">
+        <h1>House Price Prediction Result</h1>
+
+        <!-- Display the prediction result -->
+        <div class="prediction-box">
+            <p>The estimated price for your house is:</p>
+            <h2>{{ price }} INR</h2>
+        </div>
+
+        <!-- Button to go back to the form -->
+        
+            <a class="arrowme" href="{% url 'predict' %}"><button class="btn-back">Predict Another Price</button></a>
+
+        <!-- Button to log out -->
+        
+            <a class="arrowme" href="{% url 'logout' %}"><button class="btn-logout">Logout</button></a>
+    </div>
+</body>
+</html>

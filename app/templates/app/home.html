@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseWise</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <!-- Add house icon using SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 96 960 960" width="40" fill="white">
+                <path d="M192 874v-384l-64 58-45-46 376-349 375 349-45 46-65-58v384H582v-246H378v246H192Zm186-60v-246h204v246h126v-396L480 255 252 418v396h126Zm102-270Z"/>
+            </svg>
+            <h1>HouseWise</h1>
+        </div>
+        <div class="navbar-buttons">
+            <a href="{% url 'logout' %}" class="btn login-btn">Logout</a>
+            <a href="{% url 'get_started' %}" class="btn getstarted-btn">Get Started</a>
+        </div>
+    </nav>
+    <!-- Fullscreen Video -->
+    <div class="video-container">
+        <video autoplay muted loop class="background-video">
+            <source src="{% static 'app/videos/v1.mp4' %}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <!-- Typewriter Effect Container -->
+        <div class="typewriter">
+            <h1 id="typewriter-text"></h1>
+        </div>
+    </div>
+    <script src="{% static 'app/scripts.js' %}"></script>
+        {% else %}
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <!-- Add house icon using SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 96 960 960" width="40" fill="white">
+                    <path d="M192 874v-384l-64 58-45-46 376-349 375 349-45 46-65-58v384H582v-246H378v246H192Zm186-60v-246h204v246h126v-396L480 255 252 418v396h126Zm102-270Z"/>
+                </svg>
+                <h1>HouseWise</h1>
+            </div>
+            <div class="navbar-buttons">
+                <a href="{% url 'login' %}" class="btn login-btn">Login</a>
+                <a href="{% url 'signup' %}" class="btn signup-btn">Sign Up</a>
+                <a href="{% url 'get_started' %}" class="btn getstarted-btn">Get Started</a>
+            </div>
+        </nav>
+        <!-- Fullscreen Video -->
+        <div class="video-container">
+            <video autoplay muted loop class="background-video">
+                <source src="{% static 'app/videos/v1.mp4' %}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <!-- Typewriter Effect Container -->
+            <div class="typewriter">
+                <h1 id="typewriter-text"></h1>
+            </div>
+        </div>
+        <script src="{% static 'app/scripts.js' %}"></script>
+        {% endif %}
+    
+</body>
+</html>
